@@ -1,7 +1,7 @@
-KRNOrientation
+KRNDeviceType
 ===============
 
-KRNDeviceType is a simple class that helps you to get type of your iOS device.
+KRNDeviceType is a simple class that helps you to get type of your iOS device for layout purposes.
 
 
 ## Installation
@@ -15,22 +15,26 @@ Write `#import "KRNDeviceType.h"` in files where you need to use KRNDeviceType.
 
 
 ## How to use
-All methods of KRNOrientation are static so you can simply call any of method without necessity of allocation of KRNOrientation class instance.
+All methods of KRNDeviceType are static so you can simply call any of method without necessity of allocation of KRNDeviceType instance.
+KRNDeviceType should be used only for layout purposes. For example, sometimes you need set different constraints for old devices which screen size doesn't meet requirements of your desing project. KRNDeviceType get info about screen size and using this information check current device type. Don't use this class for accurate detecting of your device type (for example you may want to check if you device is iPhone 5s);
 
-To get current orientation you can use one of next methods:
+To get current device type you can use one of next methods:
 
 ```objc
-+ (UIInterfaceOrientation)deviceOrientation;  // returns current device orientation as a enum type of UIInterfaceOrientation. Return value can be simply used in switch/case construction.
++ (BOOL)iPhone;  // return YES if device is iPhone
++ (BOOL)iPad; // return YES if device is iPad
 
-// Basic methods
-+ (BOOL)isPortrait;  // returns YES if current orientation is Portrait or PortraitUpsideDown
-+ (BOOL)isLandscape; // returns YES if current orientation is LandscapeLeft of LandscapeRight
+// get device type by checking its screen size
++ (BOOL)iPhone4s; // iPhone 4s or iPhone 4
++ (BOOL)iPhone5; // iPhone 5 or iPhone 5s or iPhone SE
++ (BOOL)iPhone6; // iPhone 6 or iPhone 6s or iPhone 7
++ (BOOL)iPhone6Plus; // iPhone 6 Plus or iPhone 6s Plus or iPhone 7s Plus
 
-// More concrete methods
-+ (BOOL)isNormalPortrait;  // returns YES if current orientation is Portrait (but not PortraitUpsideDown)
-+ (BOOL)isUpsideDownPortrait; // returns YES if current orientation is PortraitUpsideDown
-+ (BOOL)isLandscapeLeft; // returns YES if current orientation is Landscape Left
-+ (BOOL)isLandscapeRight; // returns YES if current orientation is Landscape Right
++ (BOOL)iPad2; // iPad 2
++ (BOOL)iPadMiniOrAir; // iPad Mini or iPad Retina or iPad Air or iPad Air 2 or iPad Pro 9.7
++ (BOOL)iPadPro; // iPad Pro 12.9
+
++ (BOOL)isMainScreenEqualToSize:(CGSize)size; // useful for subclassing
 ```
 
 ## Requirements

@@ -21,11 +21,9 @@
 + (BOOL)iPhone6; // iPhone 6 or iPhone 6s or iPhone 7
 + (BOOL)iPhone6Plus; // iPhone 6 Plus or iPhone 6s Plus or iPhone 7s Plus
 
-
 + (BOOL)iPad2; // iPad 2
 + (BOOL)iPadMiniOrAir; // iPad Mini or iPad Retina or iPad Air or iPad Air 2 or iPad Pro 9.7
 + (BOOL)iPadPro; // iPad Pro 12.9
-
 
 + (BOOL)isMainScreenEqualToSize:(CGSize)size; // useful for subclassing
 
