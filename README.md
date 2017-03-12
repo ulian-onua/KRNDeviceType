@@ -44,7 +44,7 @@ To get current device type you can use one of next methods:
 
 ## License
 
-KRNOrientation is released under the MIT license. See LICENSE for details.
+KRNDeviceType is released under the MIT license. See LICENSE for details.
 
 ## Contact
 
